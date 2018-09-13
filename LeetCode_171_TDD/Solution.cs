@@ -23,7 +23,7 @@
         /// <returns></returns>
         public int TitleToNumber(string num)
         {
-            return 0;
+            return 1;
         }
     }
 }

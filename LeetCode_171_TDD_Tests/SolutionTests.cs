@@ -21,5 +21,20 @@ namespace LeetCode_171_TDD_Tests
             // assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Input_AB_Should_Return_28()
+        {
+            // arrange
+            var source = "AB";
+            var expected = 28;
+            var sut = new Solution();
+
+            // act
+            var actual = sut.TitleToNumber(source);
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

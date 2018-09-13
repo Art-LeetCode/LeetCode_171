@@ -42,5 +42,33 @@ namespace LeetCode_171_TDD_Tests
             // assert
             Assert.AreEqual(expected, actual);
         }
+
+        [TestMethod]
+        public void Input_ZY_Should_Return_701()
+        {
+            // arrange
+            var source = "ZY";
+            var expected = 701;
+
+            // act
+            var actual = _sut.TitleToNumber(source);
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        public void Input_ABC_Should_Return_731()
+        {
+            // arrange
+            var source = "ABC";
+            var expected = 731;
+
+            // act
+            var actual = _sut.TitleToNumber(source);
+
+            // assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

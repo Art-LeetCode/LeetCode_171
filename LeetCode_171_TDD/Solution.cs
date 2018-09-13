@@ -1,4 +1,6 @@
-﻿namespace LeetCode_171_TDD
+﻿using System;
+
+namespace LeetCode_171_TDD
 {
     public class Solution
     {
@@ -23,7 +25,26 @@
         /// <returns></returns>
         public int TitleToNumber(string num)
         {
-            return 1;
+            var result = 0;
+            var power = num.Length - 1;
+
+            foreach (char c in num)
+            {
+                var idxNum = GetEnglishCharNumber(c);
+                result += CountWithPower(idxNum, power);
+                power--;
+            }
+            return result;
+        }
+
+        private int CountWithPower(int idxNum, int power)
+        {
+            return power == 0 ? idxNum : idxNum * (int)Math.Pow(26, power);
+        }
+
+        private int GetEnglishCharNumber(char c)
+        {
+            return c - 64;
         }
     }
 }

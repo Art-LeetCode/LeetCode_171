@@ -4,6 +4,8 @@ namespace LeetCode_171_TDD
 {
     public class Solution
     {
+        private const int AsciiBase = 64;
+
         /// <summary>
         ///Given a column title as appear in an Excel sheet,
         ///return its corresponding column number.
@@ -39,12 +41,12 @@ namespace LeetCode_171_TDD
 
         private int CountWithPower(int idxNum, int power)
         {
-            return power == 0 ? idxNum : idxNum * (int)Math.Pow(26, power);
+            const int englishLetterCount = 26;
+            return power == 0
+                ? idxNum
+                : idxNum * (int)Math.Pow(englishLetterCount, power);
         }
 
-        private int GetEnglishCharNumber(char c)
-        {
-            return c - 64;
-        }
+        private int GetEnglishCharNumber(char c) => c - AsciiBase;
     }
 }

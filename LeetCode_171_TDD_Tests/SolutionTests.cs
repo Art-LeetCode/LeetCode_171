@@ -7,16 +7,23 @@ namespace LeetCode_171_TDD_Tests
     [TestClass]
     public class SolutionTests
     {
+        private Solution _sut;
+
+        [TestInitialize]
+        public void TestInit()
+        {
+            _sut = new Solution();
+        }
+
         [TestMethod]
         public void Input_A_Should_Return_1()
         {
             // arrange
             var source = "A";
             var expected = 1;
-            var sut = new Solution();
 
             // act
-            var actual = sut.TitleToNumber(source);
+            var actual = _sut.TitleToNumber(source);
 
             // assert
             Assert.AreEqual(expected, actual);
@@ -28,10 +35,9 @@ namespace LeetCode_171_TDD_Tests
             // arrange
             var source = "AB";
             var expected = 28;
-            var sut = new Solution();
 
             // act
-            var actual = sut.TitleToNumber(source);
+            var actual = _sut.TitleToNumber(source);
 
             // assert
             Assert.AreEqual(expected, actual);
